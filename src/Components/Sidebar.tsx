@@ -21,7 +21,6 @@ const StyledSidebar = styled.div`
 const Sidebar = () => {
   const [isExpanded, setIsExpanded] = useState(false);
 
-  // const shapes = ['rectangular', 'hollow_rectangular'];
   const shapes = [
     "Rectangular",
     "Hollow Rectangular",
