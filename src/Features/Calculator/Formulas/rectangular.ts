@@ -1,7 +1,7 @@
 class Rectangular {
     depth: number;
     width: number;
-
+    
     area: number;
     perimeter: number;
     

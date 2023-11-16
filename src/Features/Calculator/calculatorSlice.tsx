@@ -1,8 +1,9 @@
 import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit';
+import { ShapeIndex } from './shapeIndex';
 
 const initialState = {
   isSidebarExpanded: false,
-  shape: 'rectangular',
+  shape: ShapeIndex.RECTANGULAR,
 }
 
 const calculatorSlice = createSlice({
@@ -12,16 +13,18 @@ const calculatorSlice = createSlice({
     toggleSidebar: (state) => {
       state.isSidebarExpanded = !state.isSidebarExpanded;
     },
-
-    viewSection: (state, action: PayloadAction<string>) => {
+    displayShape: (state, action: PayloadAction<ShapeIndex>) => {
       state.shape = action.payload;
+    },
+    solveSection: (state, action: PayloadAction<string>) => {
+      
     }
   }
 });
 
 export const {
   toggleSidebar,
-  viewSection
+  displayShape,
 } = calculatorSlice.actions;
 
 export default calculatorSlice.reducer;

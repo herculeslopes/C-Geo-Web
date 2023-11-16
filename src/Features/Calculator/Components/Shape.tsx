@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import { FaShapes } from "react-icons/fa";
 import { useAppDispatch, useAppSelector } from "../../../Hooks/reduxHooks";
-import { viewSection } from "../calculatorSlice";
+import { displayShape } from "../calculatorSlice";
+import { ShapeIndex } from "../shapeIndex";
 
 const StyledShape = styled.div`
   display: flex;
@@ -46,13 +47,13 @@ const StyledShape = styled.div`
   }
 `
 
-const Shape = ({ shape }: { shape: string }) => {
+const Shape = ({ shape }: { shape: ShapeIndex }) => {
   // const { shape: s } = useAppSelector((state) => state.sections);
   const { isSidebarExpanded } = useAppSelector((state) => state.calculator);
   const dispatch = useAppDispatch();
 
   return <>
-    <StyledShape className={isSidebarExpanded ? 'is-expanded' : ''} onClick={() => dispatch(viewSection(shape))}>
+    <StyledShape className={isSidebarExpanded ? 'is-expanded' : ''} onClick={() => dispatch(displayShape(shape))}>
       <FaShapes className='react-icon' />
       {isSidebarExpanded ? <span>{shape}</span> : <></>}
     </StyledShape>

@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { useAppSelector } from "../../../Hooks/reduxHooks";
+import Form from "./Form";
 
 const StyledMenu = styled.div`
   display: flex;
@@ -12,7 +13,8 @@ const Menu = () => {
   
   return <>
     <StyledMenu>
-      
+      <h1>{shape}</h1>
+      <Form />
     </StyledMenu>
   </>
 }
