@@ -1,8 +1,7 @@
-type Rectangular = {
-    depth: number;
-    width: number;
-}
-
+// type Rectangular = {
+//     depth: number;
+//     width: number;
+// }
 
 type HollowRectangular = {
     depth: number;
