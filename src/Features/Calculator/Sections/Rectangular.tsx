@@ -1,4 +1,5 @@
 import { styled } from "styled-components";
+import { use } from '@svg-drawing/react';
 
 const StyledRectangular = styled.div`
   width: 100px;
@@ -8,9 +9,17 @@ const StyledRectangular = styled.div`
 `
 
 const Rectangular = () => {
+  const [renderRef, draw] = useSvgDrawing();
+
   return <>
-    <StyledRectangular />
+    <div style={{ width: 500, height: 500 }} ref={renderRef} />
   </>
+
+  // return <>
+  //   <StyledRectangular>
+
+  //   </StyledRectangular>
+  // </>
 }
 
 export default Rectangular;
