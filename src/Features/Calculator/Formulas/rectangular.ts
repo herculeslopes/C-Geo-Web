@@ -1,17 +1,36 @@
-class Rectangular {
+import { FormConfig } from "../Components/DynamicForm";
+
+export type rectangularDimensions = {
+    depth: number;
+    width: number;
+}
+
+export const rectangularFormConfig: FormConfig = {
+    fields: [
+        { type: 'number', label: 'Depth', name: 'depth', unit: 'mm', value: 0 },
+        { type: 'number', label: 'Width', name: 'width', unit: 'mm', value: 0 },
+    ]
+}
+
+export default class Rectangular {
     depth: number;
     width: number;
     
     area: number;
     perimeter: number;
     
-    constructor(depth: number, width: number) {
-        this.depth = depth;
-        this.width = width;
+    constructor() { //depth: number, width: number
+        // this.depth = depth;
+        // this.width = width;
 
-        this.setAllProperties();
+        // this.setAllProperties();
     }
 
+    public setDimensions(depth: number, width: number): void {
+        this.depth = depth;
+        this.width = width;
+    }
+    
     public setAllProperties(): void {
         this.setArea();
         this.setPerimeter();
