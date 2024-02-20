@@ -3,6 +3,7 @@ import { FaShapes } from "react-icons/fa";
 import { useAppDispatch, useAppSelector } from "../../../Hooks/reduxHooks";
 import { displayShape } from "../calculatorSlice";
 import { ShapeIndex } from "../shapeIndex";
+import { SectionMapping } from "../types";
 
 const StyledShape = styled.div`
   display: flex;
@@ -45,6 +46,11 @@ const StyledShape = styled.div`
     width: 20px;
     height: 20px;
   }
+
+  .btn-icon {
+    width: 100%;
+    height: 100%;
+  }
 `
 
 const Shape = ({ shape }: { shape: ShapeIndex }) => {
@@ -54,7 +60,8 @@ const Shape = ({ shape }: { shape: ShapeIndex }) => {
 
   return <>
     <StyledShape className={isSidebarExpanded ? 'is-expanded' : ''} onClick={() => dispatch(displayShape(shape))}>
-      <FaShapes className='react-icon' />
+      {/* <FaShapes className='react-icon' /> */}
+      <img className="btn-icon" src={SectionMapping[shape].icon} alt="" />
       {isSidebarExpanded ? <span>{shape}</span> : <></>}
     </StyledShape>
   </>

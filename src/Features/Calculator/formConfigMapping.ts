@@ -12,6 +12,6 @@ export const formConfigMapping: Record<ShapeIndex, FormConfig> = {
   [ShapeIndex.RECTANGULAR]: rectangularFormConfig,
   [ShapeIndex.HOLLOW_RECTANGULAR]: hollowRectangularFormConfig,
   [ShapeIndex.CIRCULAR]: circularFormConfig,
-  [ShapeIndex.HOLLOW_CIRCULAR]: hollowCircularFormConfig,
+  // [ShapeIndex.HOLLOW_CIRCULAR]: hollowCircularFormConfig,
   [ShapeIndex.I_SHAPE]: ishapeFormConfig,
 }

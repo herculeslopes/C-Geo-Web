@@ -1,6 +1,7 @@
 import { styled } from "styled-components";
 import { useAppSelector } from "../../../Hooks/reduxHooks";
 import { useEffect } from "react";
+import { useDraw } from "@svg-drawing/react";
 // import { use } from '@svg-drawing/react';
 
 const StyledRectangular = styled.div`
@@ -11,7 +12,7 @@ const StyledRectangular = styled.div`
 `
 
 const Rectangular = () => {
-  // const [renderRef, draw] = useSvgDrawing();
+  // const [renderRef, draw] = useDraw();
   const { shape, dimensions, formConfig } = useAppSelector((state) => state.calculator);
 
   useEffect(() => {
